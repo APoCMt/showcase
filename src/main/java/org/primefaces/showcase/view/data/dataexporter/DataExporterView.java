@@ -34,7 +34,7 @@ public class DataExporterView implements Serializable {
     
     @PostConstruct
     public void init() {
-        cars = service.createCars(100);
+        cars = service.createCars(5);
     }
 
     public List<Car> getCars() {

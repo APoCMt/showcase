@@ -1,0 +1,44 @@
+<html>
+<head>
+<script language="JavaScript">			
+	function windowWidth() {
+		if (window.innerWidth) 
+			return parseInt(window.innerWidth) - 18;
+		if (document.documentElement && document.documentElement.clientWidth) 
+			return parseInt(document.documentElement.clientWidth);
+		if (document.body && document.body.clientWidth) return parseInt(document.body.clientWidth);
+			return 0;
+	}
+
+	function windowHeight() {
+		if (window.innerHeight) 
+			return parseInt(window.innerHeight) - 18;
+		if (document.documentElement && document.documentElement.clientHeight) 
+			return parseInt(document.documentElement.clientHeight);
+		if (document.body && document.body.clientHeight) 
+			return parseInt(document.body.clientHeight);
+		return 0;
+	}	
+
+	function init() 
+	{
+		resizeServiceArea();
+	}	
+	
+	function resizeServiceArea()
+	{
+		document.getElementById("serviceArea").style.height = (windowHeight()-100) +"px";
+		var width = windowWidth();
+		width<810?width=810:"";
+		document.getElementById("serviceArea").style.width = width +"px";
+	}
+						
+	window.onload = init;
+	//window.onresize = resizeServiceArea;
+</script>
+</head>
+<body id="body">
+	<h1>Welcome</h1>
+	<iframe src="http://localhost:8080/showcase/ui/df/basic.xhtml" name="serviceArea" id="serviceArea" scrolling="yes" frameborder="1"></iframe>
+</body>
+</html>
